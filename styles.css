@@ -12,12 +12,14 @@
 }
 #wrapper{
     height: 100vh;
+    width: 100vw;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
 .container{
-    width: 1200px;
+    max-width: 1200px;
+    width:100%;
     margin: 0 auto;
 
 }
@@ -27,7 +29,11 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 1rem;
+    padding-inline: 2rem;
+
+    
 }
+
 
 .logo{
     width: 80px;
@@ -44,10 +50,18 @@
     font-size: 28px;
 }
 
+@media screen and (max-width: 768px){
+    .logo-container{
+        display: none;
+    }
+    
+}
+
 .nav-items{
     display: flex;
+  
     gap: 2rem;
-    padding: 0 4em;
+    padding: 0 1rem;
 }
 
 .nav-items div{
@@ -73,12 +87,21 @@ a{
 .hero-section{
     position: relative;
     display: flex;
+    
     justify-content: center;
     align-items: center;
     gap: 5rem;
     margin: 4rem auto;
     padding: 0 1rem;
     padding-bottom: 8rem;
+}
+
+@media screen and (max-width: 768px){
+    .hero-section{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
 }
 
 .faded-text{
@@ -165,6 +188,10 @@ a{
 
 .absolute{
     position: absolute;
+    font-size: 5rem;
+    width: 100%;
+    height: 17%;
+    z-index: -1;
 }
 
 .user-image{
@@ -531,14 +558,13 @@ a{
     margin: 10rem auto;
     gap: 30px;
 }
-
 .skill-container-left{
-   width: 50%;
-   display: flex;
-   flex-direction: column;
-}
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+ }
 
-.skills-container-right{
+ .skills-container-right{
     display: flex;
     flex-wrap: wrap;
     width: 50%;
@@ -546,6 +572,25 @@ a{
     gap: 2rem;
     justify-content: center;
 }
+@media screen and (max-width: 768px){
+    .skills-container{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .skill-container-left{
+        width: 80%;
+       
+    }
+    .skills-container-right{
+        width: 100%;
+        
+
+    }
+    
+}
+
+
+
 
 .skill-fade-text{
     position: absolute;
@@ -557,6 +602,7 @@ a{
     overflow-y: hidden;
     /* overflow-x: hidden; */
     user-select: none;
+    z-index: -1;
 }
 
 .blob-style{
@@ -591,7 +637,6 @@ a{
     color: var(--bgOrange);
     line-height: 50px;
 }
-
 .caps{
     font-size: 90px;
 }
@@ -601,6 +646,20 @@ a{
     width: 85%;
     text-align: justify;
 }
+@media screen and (max-width: 768px){
+    .skill-heading{
+        font-size: 30px;
+    }
+    .skill-subHeading{
+        font-size: 20px;
+    }
+    .caps{
+        font-size: 50px;
+    }
+    
+}
+
+
 
 .skill-subHeading p{
     margin: 15px 0;
@@ -619,13 +678,14 @@ a{
     font-size: 5em;
     color: var(--bgOrange);
     padding-top: 2rem;
-
+    z-index: 2;
 }
 
 .contactus-sub-heading{
     font-size: 3rem;
     color: #343d68aa;
     text-transform: capitalize;
+    z-index: 2;
 }
 
 .form{
@@ -689,6 +749,7 @@ footer{
     padding: 1.2rem;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .footer-faded-text{
@@ -698,11 +759,13 @@ footer{
    color: #535c87;
    user-select: none;
    font-size: 5em;
+   z-index: 1;
 }
 
 .link-wrapper{
     display: flex;
     gap: 1.2rem;
+    z-index: 2;
 }
 
 .link-wrapper div a{
@@ -719,3 +782,100 @@ footer{
     display: flex;
     gap: 1rem;
 }
+
+
+/* ...existing code... */
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .hero-section {
+      flex-direction: column-reverse;
+      gap: 2rem;
+      padding-bottom: 4rem;
+    }
+  
+    .hero-section-left {
+      align-items: center;
+      text-align: center;
+    }
+  
+    .hero-section-description {
+      width: 100%;
+    }
+  
+    .hero-section-right {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .user-image {
+      width: 80%;
+      height: auto;
+    }
+  
+    .skills-container {
+      flex-direction: column;
+      padding: 2rem;
+      gap: 2rem;
+    }
+  
+    .skill-container-left,
+    .skills-container-right {
+      width: 100%;
+    }
+  
+    .skill-heading {
+      font-size: 30px;
+    }
+  
+    .skill-subHeading {
+      font-size: 20px;
+    }
+  
+    .caps {
+      font-size: 50px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-section-heading {
+      font-size: 24px;
+    }
+  
+    .hero-section-sub-heading {
+      font-size: 28px;
+      line-height: 28px;
+    }
+  
+    .btn-pink {
+      padding: 0.5rem 1rem;
+      font-size: 14px;
+    }
+  
+    .skills-logo {
+      width: 50px;
+    }
+  
+    .contactus-heading {
+      font-size: 2.5em;
+    }
+  
+    .contactus-sub-heading {
+      font-size: 1.5rem;
+    }
+  
+    .formfield {
+      font-size: 14px;
+    }
+  
+    .submit-icon {
+      font-size: 1rem;
+    }
+  
+    .footer-faded-text {
+      font-size: 2em;
+    }
+  }
+  
+  /* ...existing code... */
